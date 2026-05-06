@@ -1,75 +1,47 @@
-# React + TypeScript + Vite
+# Simulador de Plazo Fijo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Preview](./public/portada.avif)
 
-Currently, two official plugins are available:
+Una aplicación web que permite proyectar las ganancias de un plazo fijo, calculando intereses y monto total a partir del capital invertido, el plazo en días y la TNA.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Stack
 
-## React Compiler
+- React + TypeScript
+- Tailwind CSS
+- Vite
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 📦 Instalación
 
-Note: This will impact Vite dev & build performances.
+```bash
+# Clonar el repositorio
+git clone https://github.com/tu-usuario/simulador-plazo-fijo.git
 
-## Expanding the ESLint configuration
+# Instalar dependencias
+npm install
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Iniciar el servidor de desarrollo
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ⚙️ Variables de entorno
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Creá un archivo `.env` en la raíz del proyecto con las siguientes variables:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+VITE_API_URL=tu_url_aqui
+VITE_API_URL_DATA=tu_url_aqui
+```
+
+| Variable            | Descripción                                                     |
+| ------------------- | --------------------------------------------------------------- |
+| `VITE_API_URL`      | Endpoint de la API para el cálculo de simulación de plazo fijo  |
+| `VITE_API_URL_DATA` | Endpoint de la API para obtener el historial de 20 simulaciones |
+
+## ✨ Funcionalidades
+
+- Simulación de plazo fijo con capital, plazo en días y TNA
+- Validación de campos del formulario
+- Visualización de resultados: capital invertido, intereses ganados y monto total
+- Historial de simulaciones con los últimos 20 registros
+- Estados de carga mientras se consulta la API
+- Diseño responsive
