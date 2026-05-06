@@ -14,7 +14,7 @@ Una aplicación web que permite proyectar las ganancias de un plazo fijo, calcul
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/simulador-plazo-fijo.git
+git clone https://github.com/alexidev23/pruebaTecnica
 
 # Instalar dependencias
 npm install
