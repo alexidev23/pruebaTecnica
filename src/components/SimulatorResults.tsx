@@ -1,11 +1,7 @@
 import { TrendingUp } from "lucide-react";
+import type { SimulatorResults } from "../types/types";
 
-interface SimulatorResultsProps {
-  capital_invertido: number;
-  plazo_en_dias: number;
-  tna: number;
-  interes_ganado: number;
-  tasa_efectiva_periodo: number;
+interface SimulatorResultsProps extends SimulatorResults {
   showResults: boolean;
 }
 

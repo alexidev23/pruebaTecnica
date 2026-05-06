@@ -1,6 +1,11 @@
 import { DollarSign, Percent } from "lucide-react";
 import { useState } from "react";
-import type { SimulatorFormProps } from "../types/types";
+import type { SimulatorProps } from "../types/types";
+export interface SimulatorFormProps {
+  onOpenHistory: () => void;
+  onSubmit: (data: SimulatorProps) => void;
+  isLoading: boolean;
+}
 
 export default function SimulatorForm({
   onOpenHistory,

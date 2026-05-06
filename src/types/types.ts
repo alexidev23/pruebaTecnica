@@ -11,9 +11,3 @@ export interface SimulatorResults {
   interes_ganado: number;
   tasa_efectiva_periodo: number;
 }
-
-export interface SimulatorFormProps {
-  onOpenHistory: () => void;
-  onSubmit: (data: SimulatorProps) => void;
-  isLoading: boolean;
-}
