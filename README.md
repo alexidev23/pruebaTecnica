@@ -1,47 +1,42 @@
-# Simulador de Plazo Fijo
+# sv
 
-![Preview](./public/portada.avif)
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-Una aplicación web que permite proyectar las ganancias de un plazo fijo, calculando intereses y monto total a partir del capital invertido, el plazo en días y la TNA.
+## Creating a project
 
-## 🛠️ Stack
+If you're seeing this, you've probably already done this step. Congrats!
 
-- React + TypeScript
-- Tailwind CSS
-- Vite
+```sh
+# create a new project
+npx sv create my-app
+```
 
-## 📦 Instalación
+To recreate this project with the same configuration:
 
-```bash
-# Clonar el repositorio
-git clone https://github.com/alexidev23/pruebaTecnica
+```sh
+# recreate this project
+pnpm dlx sv@0.15.3 create --template minimal --types ts --add eslint tailwindcss="plugins:typography,forms" --install pnpm .
+```
 
-# Instalar dependencias
-npm install
+## Developing
 
-# Iniciar el servidor de desarrollo
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```sh
 npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
 
-## ⚙️ Variables de entorno
+## Building
 
-Creá un archivo `.env` en la raíz del proyecto con las siguientes variables:
+To create a production version of your app:
 
+```sh
+npm run build
 ```
-VITE_API_URL=tu_url_aqui
-VITE_API_URL_DATA=tu_url_aqui
-```
 
-| Variable            | Descripción                                                     |
-| ------------------- | --------------------------------------------------------------- |
-| `VITE_API_URL`      | Endpoint de la API para el cálculo de simulación de plazo fijo  |
-| `VITE_API_URL_DATA` | Endpoint de la API para obtener el historial de 20 simulaciones |
+You can preview the production build with `npm run preview`.
 
-## ✨ Funcionalidades
-
-- Simulación de plazo fijo con capital, plazo en días y TNA
-- Validación de campos del formulario
-- Visualización de resultados: capital invertido, intereses ganados y monto total
-- Historial de simulaciones con los últimos 20 registros
-- Estados de carga mientras se consulta la API
-- Diseño responsive
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
