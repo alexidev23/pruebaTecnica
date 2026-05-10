@@ -34,7 +34,7 @@
 </script>
 
 {#if isOpen}
-  <div
+  <button
     class="fixed inset-0 bg-muted/70 backdrop-blur-sm z-40"
     onclick={onClose}
   />

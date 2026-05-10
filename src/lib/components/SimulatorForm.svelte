@@ -55,8 +55,10 @@
   };
 
   const handleSubmit = async (e: SubmitEvent) => {
+    console.log("submit disparado");
     e.preventDefault();
     if (!validate()) return;
+    console.log("validación pasada");
     onSubmit({
       capital_invertido: input.monto,
       plazo_en_dias: input.dias,
@@ -79,7 +81,6 @@
           type="number"
           name="monto"
           id="monto"
-          // min={1000}
           placeholder="1000000"
           class="w-full bg-card border border-muted-foreground placeholder:text-muted-foreground/40 rounded-md px-8 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           value={input.monto === 0 ? "" : input.monto}
@@ -103,7 +104,6 @@
         type="number"
         name="dias"
         id="dias"
-        // min={30}
         placeholder="60"
         class="w-full bg-card border border-muted-foreground placeholder:text-muted-foreground/40 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
         value={input.dias === 0 ? "" : input.dias}
@@ -123,7 +123,6 @@
           type="number"
           name="tna"
           id="tna"
-          // max={50}
           placeholder="40"
           class="w-full bg-card border border-muted-foreground placeholder:text-muted-foreground/40 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           value={input.tna === 0 ? "" : input.tna}

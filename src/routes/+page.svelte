@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Header from "$lib/components/Header.svelte";
   import HistoryDrawer from "$lib/components/HistoryDrawer.svelte";
   import SimulatorForm from "$lib/components/SimulatorForm.svelte";
@@ -6,7 +6,7 @@
   import { createSimulator } from "$lib/hooks/useSimulator.svelte";
 
   let isDrawerOpen = $state(false);
-  const { results, isLoading, simulate } = createSimulator();
+  const simulator = createSimulator();
 </script>
 
 <Header />
@@ -23,16 +23,16 @@
   <div class="grid grid-cols-1 gap-8 xl:grid-cols-2 py-12">
     <SimulatorForm
       onOpenHistory={() => (isDrawerOpen = true)}
-      onSubmit={simulate}
-      {isLoading}
+      onSubmit={simulator.simulate}
+      isLoading={simulator.isLoading}
     />
     <SimulatorResults
-      capital_invertido={results?.capital_invertido || 0}
-      plazo_en_dias={results?.plazo_en_dias || 0}
-      tna={results?.tna || 0}
-      interes_ganado={results?.interes_ganado || 0}
-      tasa_efectiva_periodo={results?.tasa_efectiva_periodo || 0}
-      showResults={!!results}
+      capital_invertido={simulator.results?.capital_invertido || 0}
+      plazo_en_dias={simulator.results?.plazo_en_dias || 0}
+      tna={simulator.results?.tna || 0}
+      interes_ganado={simulator.results?.interes_ganado || 0}
+      tasa_efectiva_periodo={simulator.results?.tasa_efectiva_periodo || 0}
+      showResults={simulator.results !== null}
     />
   </div>
   <HistoryDrawer isOpen={isDrawerOpen} onClose={() => (isDrawerOpen = false)} />

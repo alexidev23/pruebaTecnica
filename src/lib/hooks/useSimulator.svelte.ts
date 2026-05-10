@@ -1,4 +1,4 @@
-import type { SimulatorProps, SimulatorResults } from "../types/types";
+import type { SimulatorProps, SimulatorResults } from "$lib/types/types";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -10,7 +10,8 @@ export function createSimulator() {
   const simulate = async (data: SimulatorProps) => {
     isLoading = true;
     error = null;
-
+    console.log("API URL:", API_URL);
+    console.log("Enviando datos:", data);
     try {
       const response = await fetch(API_URL, {
         method: "POST",
@@ -27,8 +28,10 @@ export function createSimulator() {
       if (!response.ok) {
         throw new Error("Error en la respuesta de la API");
       }
+      const responseData = await response.json();
+      console.log("Respuesta API:", responseData);
 
-      results = await response.json();
+      results = responseData;
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (e) {
       error = "Error al consutar la API";
