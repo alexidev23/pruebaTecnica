@@ -1,42 +1,47 @@
-# sv
+# Simulador de Plazo Fijo
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+![Preview](./src/lib/assets/portada.avif)
 
-## Creating a project
+Una aplicación web que permite proyectar las ganancias de un plazo fijo, calculando intereses y monto total a partir del capital invertido, el plazo en días y la TNA.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## 🛠️ Stack
 
-```sh
-# create a new project
-npx sv create my-app
-```
+- Svelte + TypeScript
+- Tailwind CSS
+- Vite
 
-To recreate this project with the same configuration:
+## 📦 Instalación
 
-```sh
-# recreate this project
-pnpm dlx sv@0.15.3 create --template minimal --types ts --add eslint tailwindcss="plugins:typography,forms" --install pnpm .
-```
+```bash
+# Clonar el repositorio
+git clone https://github.com/alexidev23/pruebaTecnica.git
 
-## Developing
+# Instalar dependencias
+npm install
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+# Iniciar el servidor de desarrollo
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+## ⚙️ Variables de entorno
 
-To create a production version of your app:
+Creá un archivo `.env` en la raíz del proyecto con las siguientes variables:
 
-```sh
-npm run build
+```
+VITE_API_URL=tu_url_aqui
+VITE_API_URL_DATA=tu_url_aqui
 ```
 
-You can preview the production build with `npm run preview`.
+| Variable            | Descripción                                                     |
+| ------------------- | --------------------------------------------------------------- |
+| `VITE_API_URL`      | Endpoint de la API para el cálculo de simulación de plazo fijo  |
+| `VITE_API_URL_DATA` | Endpoint de la API para obtener el historial de 20 simulaciones |
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## ✨ Funcionalidades
+
+- Simulación de plazo fijo con capital, plazo en días y TNA
+- Validación de campos del formulario
+- Visualización de resultados: capital invertido, intereses ganados y monto total
+- Historial de simulaciones con los últimos 20 registros
+- Estados de carga mientras se consulta la API
+- Diseño responsive
